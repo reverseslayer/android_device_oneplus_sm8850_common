@@ -38,9 +38,16 @@ lib_fixups: lib_fixups_user_type = {
         'vendor.qti.ImsRtpService-V1-ndk',
         'vendor.qti.diaghal-V1-ndk',
         'vendor.qti.hardware.dpmaidlservice-V1-ndk',
+        'android.hardware.bluetooth.audio-impl',
+        'android.hardware.audio.common-V1-ndk',
+        'android.hardware.audio.core.sounddose-V1-ndk',
         'vendor.qti.hardware.wifidisplaysession_aidl-V1-ndk',
         'vendor.qti.qccsyshal_aidl-V1-ndk',
         'vendor.qti.qccvndhal_aidl-V1-ndk',
+        'android.media.audio.common.types-V2-ndk',
+        'android.media.audio.common.types-V4-ndk',
+        'android.media.audio.common.types-V5-ndk',
+        'android.hardware.graphics.common-V5-ndk',
     ): lib_fixup_vendor_suffix,
     (
         'libagm',
@@ -51,6 +58,7 @@ lib_fixups: lib_fixups_user_type = {
         'libaudioserviceexampleimpl',
         'liblx-osal',
         'libvui_intf',
+        'libstdc++',
     ): lib_fixup_remove,
 }
 
@@ -74,21 +82,28 @@ blob_fixups: blob_fixups_user_type = {
         .add_line_if_missing('sched_get_priority_min: 1')
         .add_line_if_missing('sched_get_priority_max: 1'),
     'vendor/lib64/hw/libaudiocorehal.qti.so': blob_fixup()
-        .replace_needed('android.hardware.audio.core.sounddose-V1-ndk.so', 'android.hardware.audio.core.sounddose-V2-ndk.so')
-        .replace_needed('android.hardware.audio.common-V1-ndk.so', 'android.hardware.audio.common-V3-ndk.so')
-        .replace_needed('libaudio_aidl_conversion_common_ndk.so', 'libaudio_aidl_conversion_common_ndk_prebuilt.so'),
+        .replace_needed('android.hardware.audio.core.sounddose-V1-ndk.so', 'android.hardware.audio.core.sounddose-V1-ndk_vendor.so')
+        .replace_needed('android.hardware.audio.common-V1-ndk.so', 'android.hardware.audio.common-V1-ndk_vendor.so')
+        .replace_needed('libaudio_aidl_conversion_common_ndk.so', 'libaudio_aidl_conversion_common_ndk_vendor.so')
+        .replace_needed('android.media.audio.common.types-V5-ndk.so', 'android.media.audio.common.types-V5-ndk_vendor.so')
+        .replace_needed('android.media.audio.common.types-V4-ndk.so', 'android.media.audio.common.types-V4-ndk_vendor.so')
+        .replace_needed('android.media.audio.common.types-V2-ndk.so', 'android.media.audio.common.types-V2-ndk_vendor.so'),
     (
         'vendor/lib64/hw/android.hardware.bluetooth.audio_sw.so',
         'vendor/lib64/libaudioserviceexampleimpl.so',
     ): blob_fixup()
-        .replace_needed('android.media.audio.common.types-V4-ndk.so', 'android.media.audio.common.types-V3-ndk.so')
-        .replace_needed('android.hardware.bluetooth.audio-impl.so', 'android.hardware.bluetooth.audio-impl_prebuilt.so')
-        .replace_needed('libbluetooth_audio_session_aidl.so', 'libbluetooth_audio_session_aidl_prebuilt.so')
-        .replace_needed('libaudio_aidl_conversion_common_ndk.so', 'libaudio_aidl_conversion_common_ndk_prebuilt.so'),
+        .replace_needed('android.media.audio.common.types-V5-ndk.so', 'android.media.audio.common.types-V5-ndk_vendor.so')
+        .replace_needed('android.media.audio.common.types-V4-ndk.so', 'android.media.audio.common.types-V4-ndk_vendor.so')
+        .replace_needed('android.media.audio.common.types-V2-ndk.so', 'android.media.audio.common.types-V2-ndk_vendor.so')
+        .replace_needed('android.hardware.bluetooth.audio-impl.so', 'android.hardware.bluetooth.audio-impl_vendor.so')
+        .replace_needed('libbluetooth_audio_session_aidl.so', 'libbluetooth_audio_session_aidl_vendor.so')
+        .replace_needed('libaudio_aidl_conversion_common_ndk.so', 'libaudio_aidl_conversion_common_ndk_vendor.so'),
     'vendor/lib64/android.hardware.bluetooth.audio-impl_prebuilt.so': blob_fixup()
-        .replace_needed('libbluetooth_audio_session_aidl.so', 'libbluetooth_audio_session_aidl_prebuilt.so'),
+        .replace_needed('libbluetooth_audio_session_aidl.so', 'libbluetooth_audio_session_aidl_vendor.so'),
     'vendor/lib64/libaudio_aidl_conversion_common_ndk_prebuilt.so': blob_fixup()
-        .replace_needed('android.media.audio.common.types-V4-ndk.so', 'android.media.audio.common.types-V3-ndk.so'),
+        .replace_needed('android.media.audio.common.types-V5-ndk.so', 'android.media.audio.common.types-V5-ndk_vendor.so')
+        .replace_needed('android.media.audio.common.types-V4-ndk.so', 'android.media.audio.common.types-V4-ndk_vendor.so')
+        .replace_needed('android.media.audio.common.types-V2-ndk.so', 'android.media.audio.common.types-V2-ndk_vendor.so'),
     (
         'vendor/lib64/soundfx/libbundleaidl.so',
         'vendor/lib64/soundfx/libdownmixaidl.so',
@@ -97,8 +112,10 @@ blob_fixups: blob_fixups_user_type = {
         'vendor/lib64/soundfx/libreverbaidl.so',
         'vendor/lib64/soundfx/libvisualizeraidl.so',
     ): blob_fixup()
-        .replace_needed('android.media.audio.common.types-V4-ndk.so', 'android.media.audio.common.types-V3-ndk.so')
-        .replace_needed('libaudio_aidl_conversion_common_ndk.so', 'libaudio_aidl_conversion_common_ndk_prebuilt.so'),
+        .replace_needed('android.media.audio.common.types-V5-ndk.so', 'android.media.audio.common.types-V5-ndk_vendor.so')
+        .replace_needed('android.media.audio.common.types-V4-ndk.so', 'android.media.audio.common.types-V4-ndk_vendor.so')
+        .replace_needed('android.media.audio.common.types-V2-ndk.so', 'android.media.audio.common.types-V2-ndk_vendor.so')
+        .replace_needed('libaudio_aidl_conversion_common_ndk.so', 'libaudio_aidl_conversion_common_ndk_vendor.so'),
     (
         'vendor/lib64/libapengine.so',
         'vendor/lib64/libqti-perfd.so',
@@ -115,7 +132,7 @@ blob_fixups: blob_fixups_user_type = {
     ): blob_fixup()
         .add_needed('libbase.so'),
     'vendor/lib64/libwfdmmsrc_proprietary.so': blob_fixup()
-        .replace_needed('android.media.audio.common.types-V2-ndk.so', 'android.media.audio.common.types-V3-ndk.so'),
+        .replace_needed('android.media.audio.common.types-V2-ndk.so', 'android.media.audio.common.types-V2-ndk_vendor.so'),
 }  # fmt: skip
 
 module = ExtractUtilsModule(

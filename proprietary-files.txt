@@ -76,12 +76,15 @@ vendor/lib64/libqtigefar.so;DISABLE_DEPS
 vendor/lib64/libtensorflowlite_c.so
 vendor/lib64/vendor.qti.hardware.ListenSoundModelAidl-V1-ndk.so
 vendor/lib64/vendor.qti.hardware.qasr-V3-ndk.so
+vendor/lib64/android.media.audio.common.types-V2-ndk.so:vendor/lib64/android.media.audio.common.types-V2-ndk_vendor.so;FIX_SONAME
+vendor/lib64/android.media.audio.common.types-V4-ndk.so:vendor/lib64/android.media.audio.common.types-V4-ndk_vendor.so;FIX_SONAME
+vendor/lib64/android.media.audio.common.types-V5-ndk.so:vendor/lib64/android.media.audio.common.types-V5-ndk_vendor.so;FIX_SONAME
 
 # Audio - old AIDL dependencies
-vendor/lib64/android.hardware.bluetooth.audio-impl.so:vendor/lib64/android.hardware.bluetooth.audio-impl_prebuilt.so;FIX_SONAME
-vendor/lib64/libaudio_aidl_conversion_common_ndk.so:vendor/lib64/libaudio_aidl_conversion_common_ndk_prebuilt.so;FIX_SONAME
+vendor/lib64/android.hardware.bluetooth.audio-impl.so:vendor/lib64/android.hardware.bluetooth.audio-impl_vendor.so;FIX_SONAME
+vendor/lib64/libaudio_aidl_conversion_common_ndk.so:vendor/lib64/libaudio_aidl_conversion_common_ndk_vendor.so;FIX_SONAME
 vendor/lib64/libaudioserviceexampleimpl.so;DISABLE_DEPS
-vendor/lib64/libbluetooth_audio_session_aidl.so:vendor/lib64/libbluetooth_audio_session_aidl_prebuilt.so;FIX_SONAME
+vendor/lib64/libbluetooth_audio_session_aidl.so:vendor/lib64/libbluetooth_audio_session_aidl_vendor.so;FIX_SONAME
 
 # Audio FX modules
 vendor/lib64/soundfx/libaudiopreprocessing.so;DISABLE_DEPS
@@ -377,6 +380,11 @@ vendor/lib64/egl/libGLESv2_adreno.so;SYMLINK=vendor/lib64/libGLESv2_adreno.so
 vendor/lib64/egl/libVkLayer_ADRENO_qprofiler.so
 vendor/lib64/egl/libq3dtools_adreno.so;SYMLINK=vendor/lib64/libq3dtools_adreno.so
 vendor/lib64/egl/libq3dtools_esx.so
+vendor/lib64/android.hardware.graphics.common-V5-ndk.so:vendor/lib64/android.hardware.graphics.common-V5-ndk_vendor.so;FIX_SONAME
+vendor/lib64/android.hardware.graphics.common-V6-ndk.so:vendor/lib64/android.hardware.graphics.common-V6-ndk_vendor.so;FIX_SONAME
+vendor/lib64/android.hardware.graphics.common@1.0.so:vendor/lib64/android.hardware.graphics.common@1.0_vendor.so;FIX_SONAME
+vendor/lib64/android.hardware.graphics.common@1.1.so:vendor/lib64/android.hardware.graphics.common@1.1_vendor.so;FIX_SONAME
+vendor/lib64/android.hardware.graphics.common@1.2.so:vendor/lib64/android.hardware.graphics.common@1.2_vendor.so;FIX_SONAME
 vendor/lib64/libCB.so
 vendor/lib64/libOpenCL.so
 vendor/lib64/libOpenCL_adreno.so
