@@ -26,6 +26,7 @@ namespace_imports = [
     'vendor/qcom/opensource/commonsys/display',
     'vendor/qcom/opensource/commonsys-intf/display',
     'vendor/qcom/opensource/dataservices',
+    "kernel_platform/common/scripts",
 ]
 
 

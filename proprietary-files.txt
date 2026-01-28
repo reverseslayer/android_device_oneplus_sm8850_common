@@ -400,6 +400,8 @@ vendor/lib64/libllvm-glnext.so
 vendor/lib64/libllvm-qcom.so
 vendor/lib64/libllvm-qgl.so
 vendor/lib64/libmapperutils.so
+vendor/lib64/vendor.qti.hardware.pal-V1-ndk.so
+vendor/lib64/hw/mapper.qti.so
 
 # Graphics (Adreno firmware)
 vendor/firmware/gen80000_aqe.fw
