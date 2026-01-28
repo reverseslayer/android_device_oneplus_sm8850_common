@@ -5,14 +5,14 @@
   },
   {
     "repository": "android_kernel_oneplus_sm8850",
-    "target_path": "kernel/oneplus/sm8850"
+    "target_path": "kernel/oplus/sm8850"
   },
   {
     "repository": "android_kernel_oneplus_sm8850-devicetrees",
-    "target_path": "kernel/oneplus/sm8850-devicetrees"
+    "target_path": "kernel/oplus/sm8850-devicetrees"
   },
   {
     "repository": "android_kernel_oneplus_sm8850-modules",
-    "target_path": "kernel/oneplus/sm8850-modules"
+    "target_path": "kernel/oplus/sm8850-modules"
   }
 ]
