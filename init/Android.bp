@@ -75,14 +75,14 @@ sh_binary {
 }
 
 sh_binary {
-    name: "init.kernel.post_boot-sun.sh",
-    src: "init.kernel.post_boot-sun.sh",
+    name: "init.kernel.post_boot-infiniti.sh",
+    src: "init.kernel.post_boot-infiniti.sh",
     vendor: true,
 }
 
 sh_binary {
-    name: "init.kernel.post_boot-sun_default_6_2.sh",
-    src: "init.kernel.post_boot-sun_default_6_2.sh",
+    name: "init.kernel.post_boot-infiniti_default_6_2.sh",
+    src: "init.kernel.post_boot-infiniti_default_6_2.sh",
     vendor: true,
 }
 
