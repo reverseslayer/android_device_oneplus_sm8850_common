@@ -494,7 +494,6 @@ DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
     hardware/qcom-caf/common/vendor_framework_compatibility_matrix.xml
 DEVICE_MATRIX_FILE := hardware/qcom-caf/common/compatibility_matrix_aidl.xml
 DEVICE_MANIFEST_FILE := \
-    $(AUDIO_HAL_DIR)/configs/infiniti/manifest_audio_qti_services.xml \
     $(LOCAL_PATH)/vintf/manifest_infiniti.xml
 
 ifneq ($(TARGET_IS_TABLET),true)
