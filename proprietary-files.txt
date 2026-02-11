@@ -1019,13 +1019,16 @@ odm/bin/init.oplus.wifi.sh
 odm/etc/init/hw/init.oplus.wifi.rc
 odm/vendor/etc/wifi/WCNSS_qcom_cfg.ini
 vendor/bin/cnss-daemon
-vendor/bin/sigma_dut
+# vendor/bin/sigma_dut - Use Opensource
 vendor/etc/init/init.vendor.wlan.rc
 vendor/etc/wifi/p2p_supplicant_overlay.conf
 vendor/etc/wifi/vendor_cmd.xml
 vendor/etc/wifi/wpa_supplicant_overlay.conf
-vendor/lib64/libipanat.so
+# vendor/lib64/libipanat.so - Use Opensource
 vendor/lib64/libdisplaydebug.so
+vendor/lib64/libkeystore-engine-wifi-hidl.so
+vendor/lib64/libkeystore-wifi-hidl.so
+
 
 # WiFi Display
 system/framework/WfdCommon.jar;BOOT_JAR
@@ -1108,5 +1111,6 @@ system_ext/lib64/vendor.oplus.hardware.charger-V9-ndk.so:system_ext/lib64/vendor
 system_ext/lib64/libdisplayconfig.system.qti.so
 vendor/lib/android.media.audio.common.types-V4-ndk.so:system/lib64/android.media.audio.common.types-V4-ndk.so
 system_ext/lib64/vendor.qti.hardware.display.config-V2-ndk.so
+system/lib64/libpcap.so
 
 # vi:ft=conf
